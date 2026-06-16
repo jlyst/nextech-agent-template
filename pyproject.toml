@@ -1,0 +1,13 @@
+[project]
+name = "nextech-agent-template"
+version = "0.1.0"
+description = "Files for experimenting with LLMs for content creation"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "agno>=2.6.16",
+    "dotenv>=0.9.9",
+    "fastapi>=0.137.1",
+    "openai>=2.41.1",
+    "requests>=2.34.2",
+]

@@ -6,8 +6,12 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "agno>=2.6.16",
+    "beautifulsoup4>=4.15.0",
     "dotenv>=0.9.9",
     "fastapi>=0.137.1",
+    "lxml-html-clean>=0.4.5",
+    "newspaper3k>=0.2.8",
     "openai>=2.41.1",
     "requests>=2.34.2",
+    "yfinance>=1.4.1",
 ]

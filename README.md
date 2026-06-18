@@ -2,7 +2,9 @@
 
 There are a few files in this project that demonstrate ways to use python for LLM inference. Below is a brief overview of the key files:
 
-- `agents.py`: This file defines a multi-agent workflow to research a topic, write an article, and generate a voice script in the `output` folder.
+- `agent-workflow.py`: This file defines a multi-agent workflow to research a topic, write an article, and generate a voice script in the `output` folder.
+
+- `agent-team.py`: This file defines a team of agents that can be used to research trending AI stories and stock prices, and write a markdown file summarizing the findings.
 
 - `tts.py`: This file demonstrates text-to-speech. It reads a script from `output/script.md`, sends it to the TTS endpoint, and saves the resulting audio as a WAV file.
 

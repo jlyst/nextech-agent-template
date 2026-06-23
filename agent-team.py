@@ -37,7 +37,7 @@ article_writer = Agent(
 script_writer = Agent(
     model=OpenRouter(id="deepseek/deepseek-v4-flash"),
     name="Script Writer",
-    instructions="Write a script for the audio narration of the findings. Output only the script text without any additional commentary.",
+    instructions="Write a script for the audio narration of the findings. Output only the script text that will be read without any additional commentary or instructions.",
     save_response_to_file=f"output/script_{timestamp}.txt",
 )
 
@@ -84,3 +84,39 @@ else:
     print(
         f"Audio saved to output/news_{timestamp}.wav. Generation ID: {response.headers.get('X-Generation-Id')}"
     )
+
+# Generate HTML page with article and optional audio widget
+article_file = f"output/article_{timestamp}.md"
+audio_file = f"output/news_{timestamp}.wav"
+html_file = f"output/article_{timestamp}.html"
+
+with open(article_file, "r") as f:
+    article_md = f.read()
+
+audio_widget = ""
+if os.path.exists(audio_file):
+    audio_widget = f'<audio controls style="width:100%;margin-bottom:2rem"><source src="news_{timestamp}.wav" type="audio/wav"></audio>'
+
+html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {{ max-width: 800px; margin: 2rem auto; padding: 0 1rem; font-family: sans-serif; }}
+  </style>
+</head>
+<body>
+  {audio_widget}
+  <div id="content"></div>
+  <script>
+    document.getElementById("content").innerHTML = marked.parse({repr(article_md)});
+  </script>
+</body>
+</html>"""
+
+with open(html_file, "w") as f:
+    f.write(html)
+
+print(f"HTML report saved to {html_file}")

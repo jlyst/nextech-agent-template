@@ -1,7 +1,19 @@
 # Nextech Catapult AI Session: Experimenting with LLMs for Content Creation
 
-- `agent-team.py`: This file defines a team of agents that can be used to research trending AI stories and stock prices, write a markdown article, and generate a script for audio narration. The agents use the DeepSeek model from OpenRouter to perform their tasks.
+The `agent-team.py` provides a quick introduction on how to create a team of agents for content creation. All outputs are saved in the `output` folder with a timestamp in the filename.
 
+The script does the following:
+* defines a team of agents that can 
+    * research trending AI stories
+    * retrieve stock prices
+    * write a markdown article to the output folder
+    * write a script for audio narration to the output folder
+* generate a voice audio file from the script to the output folder.
+* generate an HTML page to the output folder that displays the article with an audio player for the narration.
+
+After running the script, you can open the generated HTML file in a browser to view the article and listen to the audio narration. **You may copy two files 1) the HTML file and 2) the matching audio file (.wav) to a web server to share it with others.**
+
+> The agents use a DeepSeek model from OpenRouter to perform their tasks.
 
 
 ## Running the Script

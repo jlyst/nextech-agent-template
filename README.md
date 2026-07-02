@@ -25,3 +25,5 @@ uv run agent-team.py
 ```
 
 **Make sure to set up your environment variable `OPENROUTER_API_KEY` in a `.env` file before running the code.** We will do this in person.
+
+If you have trouble with the deepseek model, you can switch to the OpenAI GPT-4.1-mini model by uncommenting the lines in the code that use it instead of the deepseek model. Use `"openai/gpt-4.1-mini"` as the model ID.
